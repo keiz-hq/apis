@@ -1,0 +1,233 @@
+Cost:
+  type: object
+  properties:
+    cost_price:
+      type: integer
+      format: uint32
+      description: 仕入本体価格
+    recycling_fee:
+      type: integer
+      format: uint32
+      description: リサイクル預託金
+    automotive_tax:
+      type: integer
+      format: uint32
+      description: 自動車税
+    automobile_weight_tax:
+      type: integer
+      format: uint32
+      description: 自動車重量税
+    automobile_liability_insurance:
+      type: integer
+      format: uint32
+      description: 自動車賠償責任保険料
+  required:
+    - cost_price
+    - recycling_fee
+    - automotive_tax
+    - automobile_weight_tax
+    - automobile_liability_insurance
+Registration:
+  type: object
+  properties:
+    chassis_number:
+      type: string
+      description: 車台番号
+    model_number:
+      type: string
+      description: 型式
+    engine_model_number:
+      type: string
+      description: 原動機の型式
+    designation_number:
+      type: string
+      description: 型式指定番号
+    classification_number:
+      type: string
+      description: 類別区分番号
+    place:
+      type: string
+      description: "運輸支局名: https://www.airia.or.jp/info/number/01.html"
+    class_number:
+      type: string
+      description: 自動車の種別による分類番号
+    kana:
+      type: string
+      description: かな
+    serial_number:
+      type: string
+      description: 一連指定番号
+    first_registered_date:
+      type: string
+      format: date-time
+      description: 初度登録年月
+    last_registered_date:
+      type: string
+      format: date-time
+      description: 登録年月日/交付年月日
+    expiration_date:
+      type: string
+      format: date-time
+      description: 有効期限の満了する日
+  required:
+    - chassis_number
+    - model_number
+    - engine_model_number
+    - designation_number
+    - classification_number
+    - place
+    - class_number
+    - kana
+    - serial_number
+    - first_registered_date
+    - last_registered_date
+    - expiration_date
+AfterService:
+  type: object
+  properties:
+    inspection_record_book:
+      $ref: "./option.yaml#/InspectionRecordBook"
+    regular_inspection_and_maintenance:
+      $ref: "./option.yaml#/RegularInspectionAndMaintenance"
+    guarantee:
+      $ref: "./option.yaml#/Guarantee"
+  required:
+    - inspection_record_book
+    - regular_inspection_and_maintenance
+    - guarantee
+CreateAfterService:
+  type: object
+  properties:
+    inspection_record_book_id:
+      type: string
+      format: uuid
+    regular_inspection_and_maintenance_id:
+      type: string
+      format: uuid
+    guarantee_id:
+      type: string
+      format: uuid
+  required:
+    - inspection_record_book_id
+    - regular_inspection_and_maintenance_id
+    - guarantee_id
+UpdateAfterService:
+  type: object
+  properties:
+    inspection_record_book_id:
+      type: string
+      format: uuid
+    regular_inspection_and_maintenance_id:
+      type: string
+      format: uuid
+    guarantee_id:
+      type: string
+      format: uuid
+Website:
+  type: object
+  properties:
+    comment:
+      type: string
+      description: コメント・説明・備考
+    lineup_order:
+      type: integer
+      format: uint32
+      description: Start from 1, default is 0 (which means not on lineup)
+    recommendation_order:
+      type: integer
+      format: uint32
+      description: Start from 1, default is 0 (which means not recommended)
+  required:
+    - comment
+Metadata:
+  type: object
+  properties:
+    registered_at:
+      type: string
+      format: date-time
+      description: 登録日時
+    last_modified_at:
+      type: string
+      format: date-time
+      description: 最終更新日時
+    sold_at:
+      type: string
+      format: date-time
+      description: 売却日時
+  required:
+    - registered_at
+    - last_modified_at
+
+Price:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    start_from:
+      type: string
+      format: date-time
+    body_price:
+      type: integer
+      format: uint32
+  required:
+    - id
+    - start_from
+    - body_price
+CreatePrice:
+  type: object
+  properties:
+    start_from:
+      type: string
+      format: date-time
+    body_price:
+      type: integer
+      format: uint32
+  required:
+    - start_from
+    - body_price
+UpdatePrice:
+  type: object
+  properties:
+    start_from:
+      type: string
+      format: date-time
+    body_price:
+      type: integer
+      format: uint32
+
+Image:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    display_order:
+      type: integer
+      format: uint32
+    is_public:
+      type: boolean
+      description: Webサイトに公開するかどうか
+  required:
+    - id
+    - display_order
+    - is_public
+CreateImage:
+  type: object
+  properties:
+    display_order:
+      type: integer
+      format: uint32
+    is_public:
+      type: boolean
+  required:
+    - display_order
+    - is_public
+UpdateImage:
+  type: object
+  properties:
+    display_order:
+      type: integer
+      format: uint32
+    is_public:
+      type: boolean

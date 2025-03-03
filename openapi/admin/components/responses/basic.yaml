@@ -1,0 +1,34 @@
+NoContent:
+  description: No Content
+Unauthorized:
+  description: Unauthorized
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: "../schemas/basic.yaml#/Error"
+  #     example:
+  #       message: Unauthorized
+NotFound:
+  description: NotFound
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: "../schemas/basic.yaml#/Error"
+  #     example:
+  #       message: NotFound
+MethodNotAllowed:
+  description: Method Not Allowed
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: "../schemas/basic.yaml#/Error"
+  #     example:
+  #       message: Method Not Allowed
+InternalServerError:
+  description: Internal Server Error
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: "../schemas/basic.yaml#/Error"
+  #     example:
+  #       message: Internal Server Error

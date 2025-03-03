@@ -1,0 +1,18 @@
+openapi: "3.0.3"
+info:
+  title: Keiz! Web API
+  version: 1.0.0
+servers:
+  - url: https://api.ag-keiz.com
+    description: Production Server
+  - url: https://stg.api.ag-keiz.com
+    description: Staging Server
+  - url: https://dev.api.ag-keiz.com
+    description: Development Server
+  - url: http://localhost:8080
+    description: Local Server
+paths:
+  /cars:
+    $ref: "./paths/car.yaml#/cars"
+  /cars/{id}:
+    $ref: "./paths/car.yaml#/cars_{id}"

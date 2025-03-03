@@ -1,0 +1,119 @@
+fuel_types:
+  get:
+    tags:
+      - fuel_type
+    summary: Get Fuel Types
+    description: Get fuel types
+    operationId: getFuelTypes
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../../components/schemas/option.yaml#/FuelType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - fuel_type
+    summary: Create Fuel Type
+    description: Create a fuel type
+    operationId: createFuelType
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/CreateFuelType"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/FuelType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+fuel_types_{id}:
+  get:
+    tags:
+      - fuel_type
+    summary: Get Fuel Type
+    description: Get a fuel type
+    operationId: getFuelType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/FuelType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - fuel_type
+    summary: Update Fuel Type
+    description: Update a fuel type
+    operationId: updateFuelType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/UpdateFuelType"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/FuelType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - fuel_type
+    summary: Delete Fuel Type
+    description: Delete a fuel type
+    operationId: deleteFuelType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"

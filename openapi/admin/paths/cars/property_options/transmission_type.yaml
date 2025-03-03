@@ -1,0 +1,119 @@
+transmission_types:
+  get:
+    tags:
+      - transmission_type
+    summary: Get Transmission Types
+    description: Get transmission types
+    operationId: getTransmissionTypes
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../../components/schemas/option.yaml#/TransmissionType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - transmission_type
+    summary: Create Transmission Type
+    description: Create a transmission type
+    operationId: createTransmissionType
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/CreateTransmissionType"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/TransmissionType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+transmission_types_{id}:
+  get:
+    tags:
+      - transmission_type
+    summary: Get Transmission Type
+    description: Get a transmission type
+    operationId: getTransmissionType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/TransmissionType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - transmission_type
+    summary: Update Transmission Type
+    description: Update a transmission type
+    operationId: updateTransmissionType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/UpdateTransmissionType"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/TransmissionType"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - transmission_type
+    summary: Delete Transmission Type
+    description: Delete a transmission type
+    operationId: deleteTransmissionType
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"

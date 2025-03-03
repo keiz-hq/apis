@@ -1,0 +1,48 @@
+cars:
+  get:
+    tags:
+      - car
+    summary: Get Cars
+    description: Get cars
+    operationId: getCars
+    parameters:
+      - name: recommended
+        in: query
+        description: Recommended
+        schema:
+          type: boolean
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+cars_{id}:
+  get:
+    tags:
+      - car
+    summary: Get Car
+    description: Get a car
+    operationId: getCar
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"

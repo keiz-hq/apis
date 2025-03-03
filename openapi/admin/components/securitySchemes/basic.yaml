@@ -1,0 +1,4 @@
+AuthBearer:
+  type: http
+  scheme: bearer
+  description: Bearer Access Token for Authorization

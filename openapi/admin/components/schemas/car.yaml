@@ -1,0 +1,238 @@
+Car:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    manufacturer:
+      $ref: "./option.yaml#/Manufacturer"
+    brand_name:
+      type: string
+      description: 車種名
+    grade_name:
+      type: string
+      description: グレード名
+    accessaries:
+      type: array
+      items:
+        $ref: "./option.yaml#/Accessary"
+      description: 装備
+    body_type:
+      $ref: "./option.yaml#/BodyType"
+    color:
+      $ref: "./option.yaml#/Color"
+    passengers:
+      type: integer
+      format: uint32
+      description: 乗車定員
+    doors:
+      type: integer
+      format: uint32
+      description: ドア数
+    handle_position:
+      $ref: "./option.yaml#/HandlePosition"
+    displacement:
+      type: integer
+      format: uint32
+      description: 排気量 (cc)
+    driving_wheels_type:
+      $ref: "./option.yaml#/DrivingWheelsType"
+    transmission_type:
+      $ref: "./option.yaml#/TransmissionType"
+    fuel_type:
+      $ref: "./option.yaml#/FuelType"
+    mileage:
+      type: integer
+      format: uint32
+      description: Mileage in km
+    repair_history:
+      type: string
+      description: "修復歴: ある場合はその詳細を記載、ない場合はNULL"
+    car_history:
+      $ref: "./option.yaml#/CarHistory"
+    registration:
+      $ref: "./property.yaml#/Registration"
+    cost:
+      $ref: "./property.yaml#/Cost"
+    prices:
+      type: array
+      items:
+        $ref: "./property.yaml#/Price"
+      description: 価格の遷移
+    after_service:
+      $ref: "./property.yaml#/AfterService"
+    images:
+      type: array
+      items:
+        $ref: "./property.yaml#/Image"
+    metadata:
+      $ref: "./property.yaml#/Metadata"
+    website:
+      $ref: "./property.yaml#/Website"
+  required:
+    - id
+    - manufacturer
+    - brand_name
+    - grade_name
+    - accessaries
+    - body_type
+    - color
+    - passengers
+    - doors
+    - displacement
+    - driving_wheels_type
+    - transmission_type
+    - fuel_type
+    - mileage
+    - car_history
+    - registration
+    - cost
+    - prices
+    - after_service
+    - images
+    - metadata
+    - website
+CreateCar:
+  type: object
+  properties:
+    manufacturer_id:
+      type: string
+      format: uuid
+    accessary_ids:
+      type: array
+      items:
+        type: string
+        format: uuid
+    brand_name:
+      type: string
+    grade_name:
+      type: string
+    body_type_id:
+      type: string
+      format: uuid
+    color_id:
+      type: string
+      format: uuid
+    passengers:
+      type: integer
+      format: uint32
+    doors:
+      type: integer
+      format: uint32
+    handle_position_id:
+      type: string
+      format: uuid
+    displacement:
+      type: integer
+      format: uint32
+    driving_wheels_type_id:
+      type: string
+      format: uuid
+    transmission_type_id:
+      type: string
+      format: uuid
+    fuel_type_id:
+      type: string
+      format: uuid
+    mileage:
+      type: integer
+      format: uint32
+    repair_history:
+      type: string
+    car_history_id:
+      type: string
+      format: uuid
+    registration:
+      $ref: "./property.yaml#/Registration"
+    cost:
+      $ref: "./property.yaml#/Cost"
+    body_price:
+      type: integer
+      format: uint32
+    after_service:
+      $ref: "./property.yaml#/CreateAfterService"
+    metadata:
+      $ref: "./property.yaml#/Metadata"
+    website:
+      $ref: "./property.yaml#/Website"
+  required:
+    - manufacturer_id
+    - brand_name
+    - grade_name
+    - accessary_ids
+    - body_type_id
+    - color_id
+    - passengers
+    - doors
+    - displacement
+    - driving_wheels_type_id
+    - transmission_type_id
+    - fuel_type_id
+    - mileage
+    - car_history_id
+    - registration
+    - cost
+    - body_price
+    - after_service
+    - metadata
+    - website
+UpdateCar:
+  type: object
+  properties:
+    manufacturer_id:
+      type: string
+      format: uuid
+    brand_name:
+      type: string
+    grade_name:
+      type: string
+    accessary_ids:
+      type: array
+      items:
+        type: string
+        format: uuid
+    body_type_id:
+      type: string
+      format: uuid
+    color_id:
+      type: string
+      format: uuid
+    passengers:
+      type: integer
+      format: uint32
+    doors:
+      type: integer
+      format: uint32
+    handle_position_id:
+      type: string
+      format: uuid
+    displacement:
+      type: integer
+      format: uint32
+    driving_wheels_type_id:
+      type: string
+      format: uuid
+    transmission_type_id:
+      type: string
+      format: uuid
+    fuel_type_id:
+      type: string
+      format: uuid
+    mileage:
+      type: integer
+      format: uint32
+    repair_history:
+      type: string
+    car_history_id:
+      type: string
+      format: uuid
+    registration:
+      $ref: "./property.yaml#/Registration"
+    cost:
+      $ref: "./property.yaml#/Cost"
+    after_service:
+      $ref: "./property.yaml#/UpdateAfterService"
+    metadata:
+      $ref: "./property.yaml#/Metadata"
+    website:
+      $ref: "./property.yaml#/Website"

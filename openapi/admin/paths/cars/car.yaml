@@ -1,0 +1,480 @@
+cars:
+  get:
+    tags:
+      - car
+    summary: Get Cars
+    description: Get cars
+    operationId: getCars
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: lined_up
+        in: query
+        description: Lined up
+        schema:
+          type: boolean
+      - name: recommended
+        in: query
+        description: Recommended
+        schema:
+          type: boolean
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - car
+    summary: Create Car
+    description: Create a car
+    operationId: createCar
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/car.yaml#/CreateCar"
+    responses:
+      201:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+cars_{id}:
+  get:
+    tags:
+      - car
+    summary: Get Car
+    description: Get a car
+    operationId: getCar
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - car
+    summary: Update Car
+    description: Update a car
+    operationId: updateCar
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/car.yaml#/UpdateCar"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/car.yaml#/Car"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - car
+    summary: Delete Car
+    description: Delete a car
+    operationId: deleteCar
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+
+cars_{carId}_images:
+  get:
+    tags:
+      - image
+    summary: Get Images
+    description: Get images
+    operationId: getImages
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../components/schemas/property.yaml#/Image"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - image
+    summary: Create Image
+    description: Create a image
+    operationId: createImage
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/property.yaml#/CreateImage"
+    responses:
+      201:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Image"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+cars_{carId}_images_{imageId}:
+  get:
+    tags:
+      - image
+    summary: Get Image
+    description: Get a image
+    operationId: getImage
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: imageId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Image"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - image
+    summary: Update Image
+    description: Update a image
+    operationId: updateImage
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: imageId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/property.yaml#/UpdateImage"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Image"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - image
+    summary: Delete Image
+    description: Delete a image
+    operationId: deleteImage
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: imageId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      204:
+        $ref: "../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+
+cars_{carId}_prices:
+  get:
+    tags:
+      - price
+    summary: Get Pricess
+    description: Get prices
+    operationId: getPrices
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../components/schemas/property.yaml#/Price"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - price
+    summary: Create Price
+    description: Create a price
+    operationId: createPrice
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/property.yaml#/CreatePrice"
+    responses:
+      201:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Price"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+cars_{carId}_prices_{priceId}:
+  get:
+    tags:
+      - price
+    summary: Get Price
+    description: Get a price
+    operationId: getPrice
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: priceId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Price"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - price
+    summary: Update Price
+    description: Update a price
+    operationId: updatePrice
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: priceId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/property.yaml#/UpdatePrice"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../components/schemas/property.yaml#/Price"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - price
+    summary: Delete Price
+    description: Delete a price
+    operationId: deletePrice
+    security:
+      - AuthBearer: []
+    parameters:
+      - name: carId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+      - name: priceId
+        in: path
+        required: true
+        description: ID
+        schema:
+          type: string
+          format: uuid
+    responses:
+      204:
+        $ref: "../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../components/responses/basic.yaml#/InternalServerError"

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "gen-admin": "redocly bundle ./openapi/admin/schema.yaml -o ./openapi/admin.gen.yaml",
+    "gen-web": "redocly bundle ./openapi/web/schema.yaml -o ./openapi/web.gen.yaml"
+  },
+  "dependencies": {
+    "@redocly/cli": "^1.31.3"
+  }
+}

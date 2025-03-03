@@ -1,0 +1,10 @@
+NoContent:
+  description: No Content
+Unauthorized:
+  description: Unauthorized
+NotFound:
+  description: NotFound
+MethodNotAllowed:
+  description: Method Not Allowed
+InternalServerError:
+  description: Internal Server Error

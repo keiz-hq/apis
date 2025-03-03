@@ -1,0 +1,119 @@
+inspection_record_books:
+  get:
+    tags:
+      - inspection_record_book
+    summary: Get Inspection Record Books
+    description: Get inspection record books
+    operationId: getInspectionRecordBooks
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../../components/schemas/option.yaml#/InspectionRecordBook"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - inspection_record_book
+    summary: Create Inspection Record Book
+    description: Create an inspection record book
+    operationId: createInspectionRecordBook
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/CreateInspectionRecordBook"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/InspectionRecordBook"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+inspection_record_books_{id}:
+  get:
+    tags:
+      - inspection_record_book
+    summary: Get Inspection Record Book
+    description: Get an inspection record book
+    operationId: getInspectionRecordBook
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/InspectionRecordBook"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - inspection_record_book
+    summary: Update Inspection Record Book
+    description: Update an inspection record book
+    operationId: updateInspectionRecordBook
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/UpdateInspectionRecordBook"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/InspectionRecordBook"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - inspection_record_book
+    summary: Delete Inspection Record Book
+    description: Delete an inspection record book
+    operationId: deleteInspectionRecordBook
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"

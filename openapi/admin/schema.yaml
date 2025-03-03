@@ -1,0 +1,78 @@
+openapi: "3.0.3"
+info:
+  title: Keiz! Admin API
+  version: 1.0.0
+servers:
+  - url: https://api.admin.ag-keiz.com
+    description: Production Server
+  - url: https://stg.api.admin.ag-keiz.com
+    description: Staging Server
+  - url: https://dev.api.admin.ag-keiz.com
+    description: Development Server
+  - url: http://localhost:8080
+    description: Local Server
+paths:
+  /cars:
+    $ref: "./paths/cars/car.yaml#/cars"
+  /cars/{id}:
+    $ref: "./paths/cars/car.yaml#/cars_{id}"
+  /cars/{carId}/images:
+    $ref: "./paths/cars/car.yaml#/cars_{carId}_images"
+  /cars/{carId}/images/{imageId}:
+    $ref: "./paths/cars/car.yaml#/cars_{carId}_images_{imageId}"
+  /cars/{carId}/prices:
+    $ref: "./paths/cars/car.yaml#/cars_{carId}_prices"
+  /cars/{carId}/prices/{priceId}:
+    $ref: "./paths/cars/car.yaml#/cars_{carId}_prices_{priceId}"
+  /cars/property_options/accessaries:
+    $ref: "./paths/cars/property_options/accessary.yaml#/accessaries"
+  /cars/property_options/accessaries/{id}:
+    $ref: "./paths/cars/property_options/accessary.yaml#/accessaries_{id}"
+  /cars/property_options/body_types:
+    $ref: "./paths/cars/property_options/body_type.yaml#/body_types"
+  /cars/property_options/body_types/{id}:
+    $ref: "./paths/cars/property_options/body_type.yaml#/body_types_{id}"
+  /cars/property_options/car_histories:
+    $ref: "./paths/cars/property_options/car_history.yaml#/car_histories"
+  /cars/property_options/car_histories/{id}:
+    $ref: "./paths/cars/property_options/car_history.yaml#/car_histories_{id}"
+  /cars/property_options/colors:
+    $ref: "./paths/cars/property_options/color.yaml#/colors"
+  /cars/property_options/colors/{id}:
+    $ref: "./paths/cars/property_options/color.yaml#/colors_{id}"
+  /cars/property_options/driving_wheels_types:
+    $ref: "./paths/cars/property_options/driving_wheels_type.yaml#/driving_wheels_types"
+  /cars/property_options/driving_wheels_types/{id}:
+    $ref: "./paths/cars/property_options/driving_wheels_type.yaml#/driving_wheels_types_{id}"
+  /cars/property_options/fuel_types:
+    $ref: "./paths/cars/property_options/fuel_type.yaml#/fuel_types"
+  /cars/property_options/fuel_types/{id}:
+    $ref: "./paths/cars/property_options/fuel_type.yaml#/fuel_types_{id}"
+  /cars/property_options/guarantees:
+    $ref: "./paths/cars/property_options/guarantee.yaml#/guarantees"
+  /cars/property_options/guarantees/{id}:
+    $ref: "./paths/cars/property_options/guarantee.yaml#/guarantees_{id}"
+  /cars/property_options/handle_positions:
+    $ref: "./paths/cars/property_options/handle_position.yaml#/handle_positions"
+  /cars/property_options/handle_positions/{id}:
+    $ref: "./paths/cars/property_options/handle_position.yaml#/handle_positions_{id}"
+  /cars/property_options/inspection_record_books:
+    $ref: "./paths/cars/property_options/inspection_record_book.yaml#/inspection_record_books"
+  /cars/property_options/inspection_record_books/{id}:
+    $ref: "./paths/cars/property_options/inspection_record_book.yaml#/inspection_record_books_{id}"
+  /cars/property_options/manufacturers:
+    $ref: "./paths/cars/property_options/manufacturer.yaml#/manufacturers"
+  /cars/property_options/manufacturers/{id}:
+    $ref: "./paths/cars/property_options/manufacturer.yaml#/manufacturers_{id}"
+  /cars/property_options/regular_inspection_and_maintenances:
+    $ref: "./paths/cars/property_options/regular_inspection_and_maintenance.yaml#/regular_inspection_and_maintenances"
+  /cars/property_options/regular_inspection_and_maintenances/{id}:
+    $ref: "./paths/cars/property_options/regular_inspection_and_maintenance.yaml#/regular_inspection_and_maintenances_{id}"
+  /cars/property_options/transmison_types:
+    $ref: "./paths/cars/property_options/transmission_type.yaml#/transmission_types"
+  /cars/property_options/transmison_types/{id}:
+    $ref: "./paths/cars/property_options/transmission_type.yaml#/transmission_types_{id}"
+components:
+  securitySchemes:
+    AuthBearer:
+      $ref: "./components/securitySchemes/basic.yaml#/AuthBearer"

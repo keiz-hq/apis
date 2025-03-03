@@ -1,0 +1,95 @@
+Car:
+  type: object
+  properties:
+    id:
+      type: string
+      description: UUID
+    manufacturer:
+      $ref: "./option.yaml#/Manufacturer"
+    brand_name:
+      type: string
+      description: 車種名
+    grade_name:
+      type: string
+      description: グレード名
+    accessaries:
+      type: array
+      items:
+        $ref: "./option.yaml#/Accessary"
+      description: 装備
+    body_type:
+      $ref: "./option.yaml#/BodyType"
+    color:
+      $ref: "./option.yaml#/Color"
+    passengers:
+      type: integer
+      format: uint32
+      description: 乗車定員
+    doors:
+      type: integer
+      format: uint32
+      description: ドア数
+    handle_position:
+      $ref: "./option.yaml#/HandlePosition"
+    displacement:
+      type: integer
+      format: uint32
+      description: Displacement in cc
+    driving_wheels_type:
+      $ref: "./option.yaml#/DrivingWheelsType"
+    transmission_type:
+      $ref: "./option.yaml#/TransmissionType"
+    fuel_type:
+      $ref: "./option.yaml#/FuelType"
+    mileage:
+      type: integer
+      format: uint32
+      description: Mileage in km
+    repair_history:
+      type: string
+      description: Description of repair history, default is empty string (which means no repair history)
+    car_history:
+      $ref: "./option.yaml#/CarHistory"
+    registration:
+      $ref: "./property.yaml#/Registration"
+    cost:
+      $ref: "./property.yaml#/Cost"
+    body_price:
+      type: integer
+      format: uint32
+      description: 本体価格
+    after_service:
+      $ref: "./property.yaml#/AfterService"
+    images:
+      type: array
+      items:
+        $ref: "./property.yaml#/Image"
+    metadata:
+      $ref: "./property.yaml#/Metadata"
+    website:
+      $ref: "./property.yaml#/Website"
+  required:
+    - id
+    - manufacturer
+    - brand_name
+    - grade_name
+    - accessaries
+    - body_type
+    - color
+    - passengers
+    - doors
+    - handle_position
+    - displacement
+    - driving_wheels_type
+    - transmission_type
+    - fuel_type
+    - mileage
+    - repair_history
+    - car_history
+    - registration
+    - cost
+    - prices
+    - after_service
+    - images
+    - metadata
+    - website

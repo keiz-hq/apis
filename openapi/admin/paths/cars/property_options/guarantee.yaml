@@ -1,0 +1,119 @@
+guarantees:
+  get:
+    tags:
+      - guarantee
+    summary: Get Guarantees
+    description: Get guarantees
+    operationId: getGuarantees
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../../components/schemas/option.yaml#/Guarantee"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - guarantee
+    summary: Create Guarantee
+    description: Create a guarantee
+    operationId: createGuarantee
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/CreateGuarantee"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Guarantee"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+guarantees_{id}:
+  get:
+    tags:
+      - guarantee
+    summary: Get Guarantee
+    description: Get a guarantee
+    operationId: getGuarantee
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Guarantee"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - guarantee
+    summary: Update Guarantee
+    description: Update a guarantee
+    operationId: updateGuarantee
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/UpdateGuarantee"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Guarantee"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - guarantee
+    summary: Delete Guarantee
+    description: Delete a guarantee
+    operationId: deleteGuarantee
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"

@@ -1,0 +1,72 @@
+Cost:
+  type: object
+  properties:
+    recycling_fee:
+      type: integer
+      format: uint32
+      description: リサイクル預託金
+    automotive_tax:
+      type: integer
+      format: uint32
+      description: 自動車税
+    automobile_weight_tax:
+      type: integer
+      format: uint32
+      description: 自動車重量税
+    automobile_liability_insurance:
+      type: integer
+      format: uint32
+      description: 自動車賠償責任保険料
+Image:
+  type: object
+  properties:
+    id:
+      type: string
+      description: UUID
+    display_order:
+      type: integer
+      format: uint32
+    is_public:
+      type: boolean
+      description: Boolean value to determine whether the image is published on the website or not
+Registration:
+  type: object
+  properties:
+    first_registered_date:
+      type: string
+      format: date-time
+      description: Year and month of first registration (初度登録年月)
+    expiration_date:
+      type: string
+      format: date-time
+      description: Expiration date (有効期限の満了する日)
+AfterService:
+  type: object
+  properties:
+    inspection_record_book:
+      $ref: "./option.yaml#/InspectionRecordBook"
+    regular_inspection_and_maintenance:
+      $ref: "./option.yaml#/RegularInspectionAndMaintenance"
+    guarantee:
+      $ref: "./option.yaml#/Guarantee"
+Website:
+  type: object
+  properties:
+    comment:
+      type: string
+      description: コメント・説明・備考
+    lineup_order:
+      type: integer
+      format: uint32
+      description: Start from 1, default is 0 (which means not on lineup)
+    recommendation_order:
+      type: integer
+      format: uint32
+      description: Start from 1, default is 0 (which means not recommended)
+Metadata:
+  type: object
+  properties:
+    last_modified_at:
+      type: string
+      format: date-time
+      description: 最終更新日時

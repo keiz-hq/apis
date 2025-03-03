@@ -1,0 +1,119 @@
+accessaries:
+  get:
+    tags:
+      - accessary
+    summary: Get Accessaries
+    description: Get accessaries
+    operationId: getAccessaries
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../../../components/schemas/option.yaml#/Accessary"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - accessary
+    summary: Create Accessary
+    description: Create an equipment
+    operationId: createAccessary
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/CreateAccessary"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Accessary"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+accessaries_{id}:
+  get:
+    tags:
+      - accessary
+    summary: Get Accessary
+    description: Get an equipment
+    operationId: getAccessary
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Accessary"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - accessary
+    summary: Update Accessary
+    description: Update an equipment
+    operationId: updateAccessary
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/option.yaml#/UpdateAccessary"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../../components/schemas/option.yaml#/Accessary"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - accessary
+    summary: Delete Accessary
+    description: Delete an equipment
+    operationId: deleteAccessary
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../../../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../../../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../../../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../../../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../../../components/responses/basic.yaml#/InternalServerError"
