@@ -8,16 +8,14 @@ cars:
     security:
       - AuthBearer: []
     parameters:
-      - name: lined_up
+      - name: filter
         in: query
-        description: Lined up
+        description: Filter
         schema:
-          type: boolean
-      - name: recommended
-        in: query
-        description: Recommended
-        schema:
-          type: boolean
+          type: string
+          enum:
+            - lined_up
+            - recommended
     responses:
       200:
         description: OK

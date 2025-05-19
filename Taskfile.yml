@@ -29,11 +29,13 @@ tasks:
     desc: "Lint Admin OpenAPI file"
     silent: true
     cmds:
+      - task: build-admin
       - npx @redocly/cli lint ./openapi/admin.gen.yaml
   lint-web:
     desc: "Lint Web OpenAPI file"
     silent: true
     cmds:
+      - task: build-web
       - npx @redocly/cli lint ./openapi/web.gen.yaml
   build-docs:
     desc: "Build OpenAPI docs"
@@ -45,21 +47,25 @@ tasks:
     desc: "Build Admin OpenAPI docs"
     silent: true
     cmds:
+      - task: build-admin
       - npx @redocly/cli build-docs ./openapi/admin.gen.yaml -o ./docs/admin.html
   build-docs-web:
     desc: "Build Web OpenAPI docs"
     silent: true
     cmds:
+      - task: build-web
       - npx @redocly/cli build-docs ./openapi/admin.gen.yaml -o ./docs/web.html
   preview-admin:
     desc: "Preview Admin OpenAPI file"
     silent: true
     cmds:
+      - task: build-admin
       - npx @redocly/cli preview-docs ./openapi/admin.gen.yaml
   preview-web:
     desc: "Preview Web OpenAPI file"
     silent: true
     cmds:
+      - task: build-web
       - npx @redocly/cli preview-docs ./openapi/web.gen.yaml
   clean:
     desc: "Clean Generated OpenAPI files"
