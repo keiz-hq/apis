@@ -5,6 +5,7 @@ cars:
     summary: Get Cars
     description: Get cars
     operationId: getCars
+    security: []
     parameters:
       - name: recommended
         in: query
@@ -31,6 +32,7 @@ cars_{carId}:
     summary: Get Car
     description: Get a car
     operationId: getCar
+    security: []
     parameters:
       - $ref: "../components/parameters/car.yaml#/carId"
     responses:

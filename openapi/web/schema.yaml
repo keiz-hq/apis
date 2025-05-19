@@ -2,6 +2,13 @@ openapi: "3.0.3"
 info:
   title: Keiz! Web API
   version: 1.0.0
+  license:
+    name: All Rights Reserved
+    url: https://ag-keiz.com
+  contact:
+    name: Keiz!
+    url: https://ag-keiz.com
+    email: hq@ag-keiz.com
 servers:
   - url: https://api.ag-keiz.com
     description: Production Server
@@ -9,8 +16,6 @@ servers:
     description: Staging Server
   - url: https://dev.api.ag-keiz.com
     description: Development Server
-  - url: http://localhost:8080
-    description: Local Server
 paths:
   /cars:
     $ref: "./paths/car.yaml#/cars"
