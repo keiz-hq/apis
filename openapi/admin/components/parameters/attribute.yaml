@@ -1,0 +1,16 @@
+attributeId:
+  name: attributeId
+  in: path
+  required: true
+  description: Attribute ID
+  schema:
+    type: string
+    format: uuid
+choiceId:
+  name: choiceId
+  in: path
+  required: true
+  description: Choice ID
+  schema:
+    type: string
+    format: uuid

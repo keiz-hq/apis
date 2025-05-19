@@ -32,7 +32,7 @@ cars_{carId}:
     description: Get a car
     operationId: getCar
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/car.yaml#/carId"
     responses:
       200:
         description: OK

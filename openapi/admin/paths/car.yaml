@@ -64,7 +64,7 @@ cars_{carId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/car.yaml#/carId"
     responses:
       200:
         description: OK
@@ -87,7 +87,7 @@ cars_{carId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/car.yaml#/carId"
     requestBody:
       required: true
       content:
@@ -116,7 +116,7 @@ cars_{carId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/car.yaml#/carId"
     responses:
       204:
         $ref: "../components/responses/basic.yaml#/NoContent"
@@ -137,13 +137,7 @@ cars_{carId}_images:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
     responses:
       200:
         description: OK
@@ -166,13 +160,7 @@ cars_{carId}_images:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
     requestBody:
       required: true
       content:
@@ -200,20 +188,8 @@ cars_{carId}_images_{imageId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: imageId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/imageId"
     responses:
       200:
         description: OK
@@ -236,20 +212,8 @@ cars_{carId}_images_{imageId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: imageId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/imageId"
     requestBody:
       required: true
       content:
@@ -278,20 +242,8 @@ cars_{carId}_images_{imageId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: imageId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/imageId"
     responses:
       204:
         $ref: "../components/responses/basic.yaml#/NoContent"
@@ -312,13 +264,7 @@ cars_{carId}_prices:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
     responses:
       200:
         description: OK
@@ -341,13 +287,7 @@ cars_{carId}_prices:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
     requestBody:
       required: true
       content:
@@ -375,20 +315,8 @@ cars_{carId}_prices_{priceId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: priceId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/priceId"
     responses:
       200:
         description: OK
@@ -411,20 +339,8 @@ cars_{carId}_prices_{priceId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: priceId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/priceId"
     requestBody:
       required: true
       content:
@@ -453,20 +369,8 @@ cars_{carId}_prices_{priceId}:
     security:
       - AuthBearer: []
     parameters:
-      - name: carId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
-      - name: priceId
-        in: path
-        required: true
-        description: ID
-        schema:
-          type: string
-          format: uuid
+      - $ref: "../components/parameters/car.yaml#/carId"
+      - $ref: "../components/parameters/car.yaml#/priceId"
     responses:
       204:
         $ref: "../components/responses/basic.yaml#/NoContent"

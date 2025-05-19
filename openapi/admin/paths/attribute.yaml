@@ -55,7 +55,7 @@ attributes_{attributeId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
     responses:
       200:
         description: OK
@@ -78,7 +78,7 @@ attributes_{attributeId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
     requestBody:
       required: true
       content:
@@ -107,7 +107,7 @@ attributes_{attributeId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
     responses:
       204:
         $ref: "../components/responses/basic.yaml#/NoContent"
@@ -127,6 +127,8 @@ attributes_{attributeId}_choices:
     operationId: getAttributeChoices
     security:
       - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
     responses:
       200:
         description: OK
@@ -148,6 +150,8 @@ attributes_{attributeId}_choices:
     operationId: createAttribute
     security:
       - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
     requestBody:
       required: true
       content:
@@ -175,7 +179,8 @@ attributes_{attributeId}_choices_{choiceId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
+      - $ref: "../components/parameters/attribute.yaml#/choiceId"
     responses:
       200:
         description: OK
@@ -198,7 +203,8 @@ attributes_{attributeId}_choices_{choiceId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
+      - $ref: "../components/parameters/attribute.yaml#/choiceId"
     requestBody:
       required: true
       content:
@@ -227,7 +233,8 @@ attributes_{attributeId}_choices_{choiceId}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/attribute.yaml#/attributeId"
+      - $ref: "../components/parameters/attribute.yaml#/choiceId"
     responses:
       204:
         $ref: "../components/responses/basic.yaml#/NoContent"

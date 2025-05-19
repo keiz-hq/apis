@@ -54,17 +54,8 @@ Car:
       $ref: "./property.yaml#/Registration"
     cost:
       $ref: "./property.yaml#/Cost"
-    prices:
-      type: array
-      items:
-        $ref: "./property.yaml#/Price"
-      description: 価格の遷移
     after_service:
       $ref: "./property.yaml#/AfterService"
-    images:
-      type: array
-      items:
-        $ref: "./property.yaml#/Image"
     metadata:
       $ref: "./property.yaml#/Metadata"
     website:
@@ -87,9 +78,7 @@ Car:
     - car_history
     - registration
     - cost
-    - prices
     - after_service
-    - images
     - metadata
     - website
 CreateCar:

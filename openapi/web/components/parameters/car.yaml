@@ -1,0 +1,8 @@
+carId:
+  name: carId
+  in: path
+  required: true
+  description: Car ID
+  schema:
+    type: string
+    format: uuid

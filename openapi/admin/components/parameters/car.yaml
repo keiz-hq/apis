@@ -1,0 +1,24 @@
+carId:
+  name: carId
+  in: path
+  required: true
+  description: Car ID
+  schema:
+    type: string
+    format: uuid
+imageId:
+  name: imageId
+  in: path
+  required: true
+  description: Image ID
+  schema:
+    type: string
+    format: uuid
+priceId:
+  name: priceId
+  in: path
+  required: true
+  description: Price ID
+  schema:
+    type: string
+    format: uuid
