@@ -20,11 +20,11 @@ cars:
               type: array
               items:
                 $ref: "../components/schemas/car.yaml#/Car"
-      401:
-        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      400:
+        $ref: "../components/responses/basic.yaml#/BadRequest"
       500:
         $ref: "../components/responses/basic.yaml#/InternalServerError"
-cars_{id}:
+cars_{carId}:
   get:
     tags:
       - car
@@ -40,8 +40,6 @@ cars_{id}:
           application/json:
             schema:
               $ref: "../components/schemas/car.yaml#/Car"
-      401:
-        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
         $ref: "../components/responses/basic.yaml#/NotFound"
       500:

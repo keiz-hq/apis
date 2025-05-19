@@ -2,6 +2,8 @@ NoContent:
   description: No Content
 Unauthorized:
   description: Unauthorized
+BadRequest:
+  description: BadRequest
 NotFound:
   description: NotFound
 MethodNotAllowed:

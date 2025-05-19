@@ -44,11 +44,11 @@ AfterService:
   type: object
   properties:
     inspection_record_book:
-      $ref: "./option.yaml#/InspectionRecordBook"
+      $ref: "./attribute.yaml#/Attribute"
     regular_inspection_and_maintenance:
-      $ref: "./option.yaml#/RegularInspectionAndMaintenance"
+      $ref: "./attribute.yaml#/Attribute"
     guarantee:
-      $ref: "./option.yaml#/Guarantee"
+      $ref: "./attribute.yaml#/Attribute"
 Website:
   type: object
   properties:

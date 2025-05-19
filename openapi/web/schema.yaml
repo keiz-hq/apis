@@ -14,5 +14,5 @@ servers:
 paths:
   /cars:
     $ref: "./paths/car.yaml#/cars"
-  /cars/{id}:
-    $ref: "./paths/car.yaml#/cars_{id}"
+  /cars/{carId}:
+    $ref: "./paths/car.yaml#/cars_{carId}"

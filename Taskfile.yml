@@ -1,0 +1,68 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  build:
+    desc: "Build OpenAPI files"
+    silent: true
+    cmds:
+      - task: build-admin
+      - task: build-web
+  build-admin:
+    desc: "Build Admin OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli bundle ./openapi/admin/schema.yaml -o ./openapi/admin.gen.yaml
+  build-web:
+    desc: "Build Web OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli bundle ./openapi/web/schema.yaml -o ./openapi/web.gen.yaml
+  lint:
+    desc: "Lint OpenAPI files"
+    silent: true
+    cmds:
+      - task: lint-admin
+      - task: lint-web
+  lint-admin:
+    desc: "Lint Admin OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli lint ./openapi/admin.gen.yaml
+  lint-web:
+    desc: "Lint Web OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli lint ./openapi/web.gen.yaml
+  build-docs:
+    desc: "Build OpenAPI docs"
+    silent: true
+    cmds:
+      - task: build-docs-admin
+      - task: build-docs-web
+  build-docs-admin:
+    desc: "Build Admin OpenAPI docs"
+    silent: true
+    cmds:
+      - npx @redocly/cli build-docs ./openapi/admin.gen.yaml -o ./docs/admin.html
+  build-docs-web:
+    desc: "Build Web OpenAPI docs"
+    silent: true
+    cmds:
+      - npx @redocly/cli build-docs ./openapi/admin.gen.yaml -o ./docs/web.html
+  preview-admin:
+    desc: "Preview Admin OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli preview-docs ./openapi/admin.gen.yaml
+  preview-web:
+    desc: "Preview Web OpenAPI file"
+    silent: true
+    cmds:
+      - npx @redocly/cli preview-docs ./openapi/web.gen.yaml
+  clean:
+    desc: "Clean Generated OpenAPI files"
+    silent: true
+    cmds:
+      - rm ./openapi/*.gen.yaml

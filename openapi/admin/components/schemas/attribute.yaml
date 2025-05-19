@@ -1,0 +1,53 @@
+Attribute:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    name:
+      type: string
+  required:
+    - id
+    - name
+CreateAttribute:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    name:
+      type: string
+  required:
+    - name
+UpdateAttribute:
+  type: object
+  properties:
+    name:
+      type: string
+
+AttributeChoice:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    name:
+      type: string
+  required:
+    - id
+    - name
+CreateAttributeChoice:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    name:
+      type: string
+  required:
+    - name
+UpdateAttributeChoice:
+  type: object
+  properties:
+    name:
+      type: string

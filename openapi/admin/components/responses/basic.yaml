@@ -8,6 +8,14 @@ Unauthorized:
   #       $ref: "../schemas/basic.yaml#/Error"
   #     example:
   #       message: Unauthorized
+BadRequest:
+  description: BadRequest
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: "../schemas/basic.yaml#/Error"
+  #     example:
+  #       message: BadRequest
 NotFound:
   description: NotFound
   # content:

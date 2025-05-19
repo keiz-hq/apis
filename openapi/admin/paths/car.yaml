@@ -26,11 +26,11 @@ cars:
             schema:
               type: array
               items:
-                $ref: "../../components/schemas/car.yaml#/Car"
+                $ref: "../components/schemas/car.yaml#/Car"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   post:
     tags:
       - car
@@ -44,19 +44,19 @@ cars:
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/car.yaml#/CreateCar"
+            $ref: "../components/schemas/car.yaml#/CreateCar"
     responses:
       201:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/car.yaml#/Car"
+              $ref: "../components/schemas/car.yaml#/Car"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
-cars_{id}:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+cars_{carId}:
   get:
     tags:
       - car
@@ -66,20 +66,20 @@ cars_{id}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/basic.yaml#/id"
     responses:
       200:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/car.yaml#/Car"
+              $ref: "../components/schemas/car.yaml#/Car"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   patch:
     tags:
       - car
@@ -89,26 +89,26 @@ cars_{id}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/basic.yaml#/id"
     requestBody:
       required: true
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/car.yaml#/UpdateCar"
+            $ref: "../components/schemas/car.yaml#/UpdateCar"
     responses:
       200:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/car.yaml#/Car"
+              $ref: "../components/schemas/car.yaml#/Car"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   delete:
     tags:
       - car
@@ -118,16 +118,16 @@ cars_{id}:
     security:
       - AuthBearer: []
     parameters:
-      - $ref: "../../components/parameters/basic.yaml#/id"
+      - $ref: "../components/parameters/basic.yaml#/id"
     responses:
       204:
-        $ref: "../../components/responses/basic.yaml#/NoContent"
+        $ref: "../components/responses/basic.yaml#/NoContent"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
 
 cars_{carId}_images:
   get:
@@ -154,11 +154,11 @@ cars_{carId}_images:
             schema:
               type: array
               items:
-                $ref: "../../components/schemas/property.yaml#/Image"
+                $ref: "../components/schemas/property.yaml#/Image"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   post:
     tags:
       - image
@@ -180,18 +180,18 @@ cars_{carId}_images:
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/property.yaml#/CreateImage"
+            $ref: "../components/schemas/property.yaml#/CreateImage"
     responses:
       201:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Image"
+              $ref: "../components/schemas/property.yaml#/Image"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
 cars_{carId}_images_{imageId}:
   get:
     tags:
@@ -222,13 +222,13 @@ cars_{carId}_images_{imageId}:
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Image"
+              $ref: "../components/schemas/property.yaml#/Image"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   patch:
     tags:
       - image
@@ -257,20 +257,20 @@ cars_{carId}_images_{imageId}:
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/property.yaml#/UpdateImage"
+            $ref: "../components/schemas/property.yaml#/UpdateImage"
     responses:
       200:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Image"
+              $ref: "../components/schemas/property.yaml#/Image"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   delete:
     tags:
       - image
@@ -296,13 +296,13 @@ cars_{carId}_images_{imageId}:
           format: uuid
     responses:
       204:
-        $ref: "../../components/responses/basic.yaml#/NoContent"
+        $ref: "../components/responses/basic.yaml#/NoContent"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
 
 cars_{carId}_prices:
   get:
@@ -329,11 +329,11 @@ cars_{carId}_prices:
             schema:
               type: array
               items:
-                $ref: "../../components/schemas/property.yaml#/Price"
+                $ref: "../components/schemas/property.yaml#/Price"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   post:
     tags:
       - price
@@ -355,18 +355,18 @@ cars_{carId}_prices:
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/property.yaml#/CreatePrice"
+            $ref: "../components/schemas/property.yaml#/CreatePrice"
     responses:
       201:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Price"
+              $ref: "../components/schemas/property.yaml#/Price"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
 cars_{carId}_prices_{priceId}:
   get:
     tags:
@@ -397,13 +397,13 @@ cars_{carId}_prices_{priceId}:
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Price"
+              $ref: "../components/schemas/property.yaml#/Price"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   patch:
     tags:
       - price
@@ -432,20 +432,20 @@ cars_{carId}_prices_{priceId}:
       content:
         application/json:
           schema:
-            $ref: "../../components/schemas/property.yaml#/UpdatePrice"
+            $ref: "../components/schemas/property.yaml#/UpdatePrice"
     responses:
       200:
         description: OK
         content:
           application/json:
             schema:
-              $ref: "../../components/schemas/property.yaml#/Price"
+              $ref: "../components/schemas/property.yaml#/Price"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
   delete:
     tags:
       - price
@@ -471,10 +471,10 @@ cars_{carId}_prices_{priceId}:
           format: uuid
     responses:
       204:
-        $ref: "../../components/responses/basic.yaml#/NoContent"
+        $ref: "../components/responses/basic.yaml#/NoContent"
       401:
-        $ref: "../../components/responses/basic.yaml#/Unauthorized"
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
       404:
-        $ref: "../../components/responses/basic.yaml#/NotFound"
+        $ref: "../components/responses/basic.yaml#/NotFound"
       500:
-        $ref: "../../components/responses/basic.yaml#/InternalServerError"
+        $ref: "../components/responses/basic.yaml#/InternalServerError"

@@ -1,0 +1,239 @@
+attributes:
+  get:
+    tags:
+      - attribute
+    summary: Get Attribute
+    description: Get attributes
+    operationId: getAttribute
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../components/schemas/attribute.yaml#/Attribute"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - attribute
+    summary: Create Attribute
+    description: Create an attributes
+    operationId: createAttribute
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/attribute.yaml#/CreateAttribute"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/Attribute"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+attributes_{attributeId}:
+  get:
+    tags:
+      - attribute
+    summary: Get Attribute
+    description: Get an attribute
+    operationId: getAttribute
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/Attribute"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - attribute
+    summary: Update Attribute
+    description: Update an attribute
+    operationId: updateAttribute
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/attribute.yaml#/UpdateAttribute"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/Attribute"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - attribute
+    summary: Delete Attribute
+    description: Delete an attribute
+    operationId: deleteAttribute
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+
+attributes_{attributeId}_choices:
+  get:
+    tags:
+      - attribute_choice
+    summary: Get Attribute Choices
+    description: Get attribute choices
+    operationId: getAttributeChoices
+    security:
+      - AuthBearer: []
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../components/schemas/attribute.yaml#/AttributeChoice"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  post:
+    tags:
+      - attribute_choice
+    summary: Create Attribute Choice
+    description: Create an attributes
+    operationId: createAttribute
+    security:
+      - AuthBearer: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/attribute.yaml#/CreateAttributeChoice"
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/AttributeChoice"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+attributes_{attributeId}_choices_{choiceId}:
+  get:
+    tags:
+      - attribute_choice
+    summary: Get Attribute Choice
+    description: Get an attribute choice
+    operationId: getAttributeChoice
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/AttributeChoice"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  patch:
+    tags:
+      - attribute_choice
+    summary: Update Attribute Choice
+    description: Update an attribute choice
+    operationId: updateAttributeChoice
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/attribute.yaml#/UpdateAttributeChoice"
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/attribute.yaml#/AttributeChoice"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
+  delete:
+    tags:
+      - attribute_choice
+    summary: Delete Attribute Choice
+    description: Delete an attribute choice
+    operationId: deleteAttributeChoice
+    security:
+      - AuthBearer: []
+    parameters:
+      - $ref: "../components/parameters/basic.yaml#/id"
+    responses:
+      204:
+        $ref: "../components/responses/basic.yaml#/NoContent"
+      401:
+        $ref: "../components/responses/basic.yaml#/Unauthorized"
+      404:
+        $ref: "../components/responses/basic.yaml#/NotFound"
+      500:
+        $ref: "../components/responses/basic.yaml#/InternalServerError"
