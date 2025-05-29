@@ -12,9 +12,6 @@ Attribute:
 CreateAttribute:
   type: object
   properties:
-    id:
-      type: string
-      format: uuid
     name:
       type: string
   required:
@@ -39,9 +36,6 @@ AttributeChoice:
 CreateAttributeChoice:
   type: object
   properties:
-    id:
-      type: string
-      format: uuid
     name:
       type: string
   required:
