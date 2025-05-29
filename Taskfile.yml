@@ -54,7 +54,7 @@ tasks:
     silent: true
     cmds:
       - task: build-web
-      - npx @redocly/cli build-docs ./openapi/admin.gen.yaml -o ./docs/web.html
+      - npx @redocly/cli build-docs ./openapi/web.gen.yaml -o ./docs/web.html
   preview-admin:
     desc: "Preview Admin OpenAPI file"
     silent: true
