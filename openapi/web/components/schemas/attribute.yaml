@@ -1,4 +1,4 @@
-Attribute:
+AttributeChoice:
   type: object
   properties:
     id:

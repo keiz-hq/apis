@@ -5,7 +5,7 @@ Car:
       type: string
       description: UUID
     manufacturer:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     brand_name:
       type: string
       description: 車種名
@@ -15,12 +15,12 @@ Car:
     accessaries:
       type: array
       items:
-        $ref: "./attribute.yaml#/Attribute"
+        $ref: "./attribute.yaml#/AttributeChoice"
       description: 装備
     body_type:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     color:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     passengers:
       type: integer
       format: uint32
@@ -30,17 +30,17 @@ Car:
       format: uint32
       description: ドア数
     handle_position:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     displacement:
       type: integer
       format: uint32
       description: Displacement in cc
     driving_wheels_type:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     transmission_type:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     fuel_type:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     mileage:
       type: integer
       format: uint32
@@ -49,7 +49,7 @@ Car:
       type: string
       description: Description of repair history, default is empty string (which means no repair history)
     car_history:
-      $ref: "./attribute.yaml#/Attribute"
+      $ref: "./attribute.yaml#/AttributeChoice"
     registration:
       $ref: "./property.yaml#/Registration"
     cost:
